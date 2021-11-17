@@ -1,4 +1,4 @@
-# Adhero : <tagline> 🏥 💉
+# Adhero : For Medical Adherence 🏥 💉
 
 ## Description : 
 
