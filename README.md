@@ -34,41 +34,31 @@ nodemon app
 ## Screenshots of the application
 <br><br>
 
-
-|                 Patient Signup                  |           
-|:-------------------------------------------------:|
-| <img width="1700" src="screenshots/patientSighup.png"> 
-
-|                Patient's Complete Profile SSection           |           
-|:-------------------------------------------------:|
-| <img width="1700" src="screenshots/completePro2.png"> 
-
-|                 Searched Doctor Results               |           
-|:-------------------------------------------------:|
-| <img width="1700" src="screenshots/3.png"> 
+Doctor Home            |  Patient Home 
+:-------------------------:|:-------------------------:
+![](/screenshots/doctorHome.png)  |  ![](/screenshots/patientHome.png)
 
 
-|                Book your Appointment                 |           
-|:-------------------------------------------------:|
-| <img width="1700" src="https://github.com/OPTUM-HACKATHON/Adhero/blob/master/screenshots/4.png"> 
+Doctor Signup            |  Patient Signup
+:-------------------------:|:-------------------------:
+![](/screenshots/doctorSignup.png)  |  ![](/screenshots/patientSighup.png)
 
+Add Patient's Medical Prescription            |  View Patient's Medical Prescription 
+:-------------------------:|:-------------------------:
+![](/screenshots/prescripByDoc1.png)  |  ![](/screenshots/viewPres.png)
 
-|                 Add Patient's Prescription               |           
-|:-------------------------------------------------:|
-| <img width="1700" src="https://github.com/OPTUM-HACKATHON/Adhero/blob/master/screenshots/5.png"> 
+Adherence Report-1           |  Adherence Report-2 
+:-------------------------:|:-------------------------:
+![](/screenshots/adhereRes1.png)  |  ![](/screenshots/adhereRes2.png)
 
-|                 Patient's Sign in                 |           
-|:-------------------------------------------------:|
-| <img width="1700" src="https://github.com/OPTUM-HACKATHON/Adhero/blob/master/screenshots/6.png"> 
+Appointments List             |  Prescription List
+:-------------------------:|:-------------------------:
+![](/screenshots/appointmentsList.png)  |  ![](/screenshots/prescripList.png)
 
+Book Doctor             |  Search Doctor
+:-------------------------:|:-------------------------:
+![](/screenshots/bookDoctor.png)  |  ![](/screenshots/searchDoc.png)
 
-|                Patient's Sign in                |           
-|:-------------------------------------------------:|
-| <img width="1700" src="https://github.com/OPTUM-HACKATHON/Adhero/blob/master/screenshots/7.png"> 
-
-|                 Check Adherence Rates                 |           
-|:-------------------------------------------------:|
-| <img width="1700" src="https://github.com/OPTUM-HACKATHON/Adhero/blob/master/screenshots/8.png"> 
 
 
 
