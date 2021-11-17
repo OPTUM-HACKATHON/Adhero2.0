@@ -32,7 +32,7 @@ nodemon app
 6. You are good to go !
 
 ## Screenshots of the application
-<br><br>
+
 
 Doctor Home            |  Patient Home 
 :-------------------------:|:-------------------------:
