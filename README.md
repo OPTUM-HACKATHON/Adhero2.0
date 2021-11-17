@@ -43,9 +43,9 @@ nodemon app
 |:-------------------------------------------------:|
 | <img width="1700" src="screenshots/completePro2.png"> 
 
-|                 Booked Appointments               |           
+|                 Searched Doctor Results               |           
 |:-------------------------------------------------:|
-| <img width="1700" src="https://github.com/OPTUM-HACKATHON/Adhero/blob/master/screenshots/3.png"> 
+| <img width="1700" src="screenshots/3.png"> 
 
 
 |                Book your Appointment                 |           
