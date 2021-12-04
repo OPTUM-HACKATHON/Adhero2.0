@@ -18,6 +18,50 @@ const db = mysql.createConnection({
     database: process.env.Database
 });
 
+//for refiling prescription
+let mailOptions2 = {
+    from:'adherotesting@gmail.com',
+    to:'rudranshj95@gmail.com',
+    subject: 'Refilling your prescription',
+    text:`Click the below link to refill your Prescription http://localhost:3000/refillPrescription`
+}
+
+cron.schedule('* * * * *', () => {
+    let system_date = formatDate(new Date().toDateString());
+    db.query('SELECT patient_id,prescription_id from prescriptions where datediff(?,prescription_end) <=3',[system_date],(error,result)=>{
+        if(error)
+        {
+            console.log(error)
+        }else{
+            console.log('Refilling starting...');
+            console.log(result);
+            result.forEach((item)=>{
+                console.log(item.patient_id);
+            mailOptions2.text = `Your prescription is running out! Click the link to refill your prescription now http://localhost:3000/refillPrescription/${item.prescription_id}`;
+            console.log(mailOptions2.text);
+                db.query('SELECT email as mail from patient where patient_id = ?',[item.patient_id],(err,res)=>{
+                    if(err)
+                    {
+                        console.log(err)
+                    }else{
+                        console.log(res[0].mail);
+                        mailOptions2.to = res[0].mail;
+                        transporter.sendMail(mailOptions2,(error,info)=>{
+                            if(error)
+                            {
+                                console.log(error)
+                            }else{
+                                console.log('Refilling email sent!')
+                            }
+                        })
+                    }
+                })
+            });
+            
+        }
+    })
+  });
+
 
 function formatDate(date) {
     var d = new Date(date),
@@ -50,7 +94,7 @@ const transporter = nodemailer.createTransport({
 });
 
 cron.schedule('0 9 * * *',()=>{
-    console.log('Cornjob working...')
+    console.log('Cronjob working...')
     let system_date = formatDate(new Date().toDateString())
     db.query('select patient_id as patid, prescription_id as presid from prescriptions where prescription_start<=? AND prescription_end>=?',[system_date,system_date],(err,res)=>{
         if(err)

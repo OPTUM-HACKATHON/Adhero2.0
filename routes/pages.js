@@ -1,9 +1,19 @@
 const express=require('express');
 var bodyParser= require('body-parser');
-
+const { decodeBase64 } = require('bcryptjs');
+const mysql = require('mysql');
 var urlencodedParser=bodyParser.urlencoded({extended:false});
 
 const router=express.Router();
+
+const db = mysql.createConnection({
+    host: process.env.Database_host,
+    user: process.env.Database_user,
+    password: process.env.Database_password,
+    database: process.env.Database
+});
+
+
 
 router.get('/',urlencodedParser,(req,res)=>{
     res.render("index");
@@ -61,6 +71,18 @@ router.get('/viewBookingsPat',urlencodedParser,(req,res)=>{
 });
 router.get('/viewBookingsDoc',urlencodedParser,(req,res)=>{
     res.render("viewBookingsDoc");
+});
+router.get('/refillPrescription/:prescription_id',urlencodedParser,(req,res)=>{
+    console.log(req.params);
+    db.query('UPDATE prescriptions SET refill_count = refill_count+1 where prescription_id=?',[req.params.prescription_id],(error,result)=>{
+        if(error)
+        {
+            console.log(error)
+        }
+            
+            res.render("refillThank");
+        
+    })
 });
 //Fictitious
 router.get('/adhereResponse',urlencodedParser,(req,res)=>{
