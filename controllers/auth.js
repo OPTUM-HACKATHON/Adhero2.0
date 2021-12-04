@@ -26,7 +26,7 @@ let mailOptions2 = {
     text:`Click the below link to refill your Prescription http://localhost:3000/refillPrescription`
 }
 
-cron.schedule('* * * * *', () => {
+cron.schedule('0 12 * * *', () => {
     let system_date = formatDate(new Date().toDateString());
     db.query('SELECT patient_id,prescription_id from prescriptions where datediff(?,prescription_end) <=3',[system_date],(error,result)=>{
         if(error)
