@@ -35,10 +35,15 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item">
+                        <a class="nav-link" href="/patientHome">Home</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link active" href="/searchDoctor">Search Doctors</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/viewBookings">View Bookings</a>
+                        <form action="/auth/viewBookingsPat" method="POST">
+                          <button class="nav-link" style="border: none; background:none;" type="submit">View Bookings</button>
+                        </form>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="/">Logout</a>
@@ -77,7 +82,7 @@ pageTitle.innerText = `${docDet[0].specialization} Specialists Near You`;
 
         const card = document.createElement("div");
         card.setAttribute("class", "container d-flex p-2 mb-3");
-        card.setAttribute("style", "justify-content:space-evenly; align-items:center;background-color:gold; flex-wrap:wrap; text-transform: capitalize; color:black;");
+        card.setAttribute("style", "justify-content:space-evenly; align-items:center;background-color:#FFDB58; flex-wrap:wrap; text-transform: capitalize; color:black;");
 
         const cardData = document.createElement("div");
         cardData.setAttribute("class", "col-md-6");

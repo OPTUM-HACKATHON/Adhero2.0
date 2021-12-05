@@ -27,10 +27,8 @@
     }
 
     .card:hover {
-      box-shadow: 8px 8px 5px blue;
       transform: scale(1.1);
       transition: 0.5s;
-
     }
 
     .card {
@@ -56,14 +54,21 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                  <li class="nav-item">
-                        <a class="nav-link" href="#">Add Prescription</a>
+                  <li class="nav-item ">
+                      <a class="nav-link active" href="doctorHome">Home</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" href="#">See Appointments</a>
+                        <form action="/auth/addPrescription" method="POST">
+                          <button type="submit" style="border: none; background:none;" class="nav-link">Add Prescription</button>
+                        </form>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link active" aria-current="page" href="/">Logout</a>
+                      <form action="/auth/viewBookingsDoc" method="POST">
+                        <button type="submit" style="border: none; background:none;" class="nav-link">View Appointments</button>
+                      </form>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" aria-current="page" href="/">Logout</a>
                   </li>
               </ul>
           </div>
@@ -71,48 +76,47 @@
   </nav>
 
   <!-- Page Title -->
-  <header class="page-header mx-auto col-md-7 my-4">
-    <h1 class="page-title fw-bold" id="docName">Welcome Doctor </h1>
-
+  <header class="page-header text-center col-md-12 my-5" >
+    <h1 class="page-title fw-bold" id="docName">Welcome Dr. </h1>
   </header>
 
 
 
 
-  <div style="width: 80%; margin: 0 auto;">
+  <div style="width: 60%; margin: 0 auto;" class="mt-3">
     {{!-- Row 1 Starts Here --}}
-    <div class="row">
-      <div class="card text-dark my-5 mx-5" style="width: 18rem; height :22rem;" id="rcorners">
+    <div class="row d-flex justify-content-between">
+
+      <div class="card text-dark" style="width: 18rem; height :24rem;" id="rcorners">
         <img class="card-img-top" src="/images/appointments.jpg" alt="Card image cap" style="height: 200px;">
-        <div class="card-body">
-          <h5 class="card-title fw-bold">Check Appointments</h5>
-
+        <div class="card-body text-center">
+          <h5 class="card-title fw-bold mt-2">Check Your Appointments</h5>
           <form action="/auth/viewBookingsDoc" method="POST">
-            <button type="submit" class="link btn btn-dark">Click Here</button>
+            <button type="submit" class="link btn btn-dark mt-2">Click Here</button>
           </form>
-          {{!-- <a href="#" class="btn btn-dark">Click Here</a> --}}
+          {{!-- <a href="#" class="btn btn-dark mt-2">Click Here</a> --}}
         </div>
       </div>
 
 
-      <div class="card text-dark my-5 mx-5" style="width: 18rem; height :22rem;" id="rcorners">
-        <img class="card-img-top" src="/images/medicalprescription.jpg" alt="Card image cap" style="height: 200px;">
-        <div class="card-body">
-          <h5 class="card-title fw-bold">Add Prescription</h5>
+      <div class="card text-dark" style="width: 18rem; height :24rem;" id="rcorners">
+        <img class="card-img-top" src="/images/prescription.jpg" alt="Card image cap" style="height: 200px;">
+        <div class="card-body text-center">
+          <h5 class="card-title fw-bold mt-2">Add Patient Prescription</h5>
           <form action="/auth/addPrescription" method="POST">
-            <button type="submit" class="link btn btn-dark">Click Here</button>
+            <button type="submit" class="link btn btn-dark mt-2">Click Here</button>
           </form>
-          {{!-- <a href="#" class="btn btn-dark">Click Here</a> --}}
+          {{!-- <a href="#" class="btn btn-dark mt-2">Click Here</a> --}}
         </div>
       </div>
 
 
 
-      <div class="card text-dark my-5 mx-5" style="width: 18rem; height :22rem;" id="rcorners">
+      <div class="card text-dark" style="width: 18rem; height :24rem;" id="rcorners">
         <img class="card-img-top" src="/images/adherence.jpg" alt="Card image cap" style="height: 200px;">
-        <div class="card-body">
-          <h5 class="card-title fw-bold">Check Adherence Rates using Patient ID</h5>
-          <a href="#" class="btn btn-dark">Click Here</a>
+        <div class="card-body text-center">
+          <h5 class="card-title fw-bold mt-2">Check Patient Adherence</h5>
+          <a href="#" class="btn btn-dark mt-2">Click Here</a>
         </div>
       </div>
     </div> 
