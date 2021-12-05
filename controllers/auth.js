@@ -541,12 +541,11 @@ exports.addingPrescription =  (req,res) =>{
     });
    
 
-    db.query('INSERT into prescriptions set ?',{doctor_id:doctorSess.idss,patient_id:form_elements.patientid,prescription_start:form_elements.sdate,prescription_end:form_elements.edate,symptoms:form_elements.symptoms},(err,result)=>{
+    db.query('INSERT into prescriptions set ?',{doctor_id:doctorSess.idss,patient_id:form_elements.patientid,prescription_start:form_elements.sdate,prescription_end:form_elements.edate,symptoms:form_elements.symptoms,prohibitions:form_elements.prohibitions},(err,result)=>{
         if(err){
             console.log(err)
         }else{
             console.log("inserted into presciptions table")
-
         }
     });
 
@@ -1210,6 +1209,7 @@ exports.viewPrescription = (req,res)=>{
         {
             console.log(error);
         }else{
+            console.log("This is final data!");
             console.log(result);
             return res.render('beforeViewPrescription', { items: JSON.stringify(result)});
         }
@@ -1230,14 +1230,14 @@ exports.viewFullPrescription = (req,res)=>{
         }else{
             finalObj.name = res6[0].fname;
             finalObj.age = res6[0].ag;
-            db.query('SELECT prescription_start as presStart,prescription_end as presEnd,doctor_id as did from prescriptions where prescription_id=?',[req.body.booking_id],(err2,res2)=>{
+            db.query('SELECT prescription_start as presStart,prohibitions,prescription_end as presEnd,doctor_id as did from prescriptions where prescription_id=?',[req.body.booking_id],(err2,res2)=>{
                 if(err2)
                 {
                     console.log(err2)
                 }else{
                     finalObj.startDate = res2[0].presStart;
                     finalObj.endDate = res2[0].presEnd;
-                
+                    finalObj.prohibitions = res2[0].prohibitions;
                 db.query('SELECT first_name as name from doctor where doctor_id=?',[res2[0].did],(err5,res5)=>{
                     if(err5)
                     {

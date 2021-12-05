@@ -65,9 +65,11 @@
      
        <h3 class="my-3"><b class="text-info">Age: &nbsp;</b> <p id="age" style="display: inline;">20 yrs</p></h3>
 
-       <h3 class="my-3"><b class="text-info">Starting Date of Dosage: &nbsp;</b> <p id="sdate" style="display: inline;" >15th September 2021</p></h3>
+       <h3 class="my-3"><b class="text-info">Starting Date of Dosage: &nbsp;</b> <p id="sdate" style="display: inline;" >10th December 2021</p></h3>
 
-       <h3 class="my-3"><b class="text-info">Ending Date of Dosage: &nbsp;</b> <p id="edate" style="display: inline;" >20th September 2021</p></h3>
+       <h3 class="my-3"><b class="text-info">Ending Date of Dosage: &nbsp;</b> <p id="edate" style="display: inline;" >15th December 2021</p></h3>
+
+       <h3 class="my-3"><b class="text-info">Prohibited Foods and Drinks: &nbsp;</b> <p id="prohibitions" style="display: inline;" >None</p></h3>
 
        
        <h2 class="fw-bold mb-3">Dosage List: </h2>
@@ -77,7 +79,7 @@
         <thead>
           <tr>
             <th scope="col">Name of Dosage</th>
-            <th scope="col">breakfast</th>
+            <th scope="col">Breakfast</th>
             <th scope="col">Lunch</th>
             <th scope="col">Dinner</th>
           </tr>
@@ -127,6 +129,8 @@
         edate.innerHTML = new Date(Date.parse(finalData.endDate)).toDateString()
         var age = document.getElementById('age')
         age.innerHTML = finalData.age
+        var prohibitions = document.getElementById('prohibitions')
+        prohibitions.innerHTML = finalData.prohibitions
         var table = document.getElementById('medicinetable')
         var medicinelist = finalData.medObj
         for(var i = 0; i < medicinelist.length ; i ++){
