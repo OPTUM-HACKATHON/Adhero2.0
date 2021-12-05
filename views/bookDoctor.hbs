@@ -35,16 +35,14 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item ">
-                      <a class="nav-link active" href="doctorHome">Home</a>
+                        <a class="nav-link" href="patientHome">Home</a>
                     </li>
                     <li class="nav-item">
-                            <form action="/auth/addPrescription" method="POST">
-                            <button type="submit" style="border: none; background:none;" class="nav-link">Add Prescription</button>
-                            </form>
+                        <a class="nav-link active" href="searchDoctor">Search Doctors</a>
                     </li>
                     <li class="nav-item">
-                        <form action="/auth/viewBookingsDoc" method="POST">
-                            <button type="submit" style="border: none; background:none;" class="nav-link">View Appointments</button>
+                        <form action="/auth/viewBookingsPat" method="POST">
+                          <button class="nav-link" style="border: none; background:none;" type="submit">View Bookings</button>
                         </form>
                     </li>
                     <li class="nav-item">
