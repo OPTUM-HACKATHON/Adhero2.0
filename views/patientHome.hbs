@@ -47,13 +47,15 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                     <li class="nav-item ">
-                        <a class="nav-link active" href="searchDoctor">Home</a>
+                        <a class="nav-link active" href="patientHome">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="searchDoctor">Search Doctors</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="viewBookingsPat">View Bookings</a>
+                        <form action="/auth/viewBookingsPat" method="POST">
+                          <button class="nav-link" style="border: none; background:none;" type="submit">View Bookings</button>
+                        </form>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="/">Logout</a>
@@ -75,45 +77,45 @@
 
   <div style="width: 80%; margin: 0 auto;">
     {{!-- Row 1 : Begins here --}}
-    <div class="row">
+    <div class="row d-flex justify-content-between">
 
-      <div class="card text-dark col-md-3 ms-3" style="width: 18rem; height :24rem;" id="rcorners"><br>
+      <div class="card text-dark text-center" style="width: 18rem; height :24rem;" id="rcorners"><br>
         <img class="card-img-top" src="/images/doctor.jpg" alt="Card image cap" style="height: 200px;">
         <div class="card-body">
-          <h5 class="card-title fw-bold"> Make an Appointment</h5>
-          <a href="searchDoctor" class="btn btn-dark">Click Here</a>
+          <h5 class="card-title fw-bold mt-2"> Make An Appointment</h5>
+          <a href="searchDoctor" class="btn btn-dark mt-2">Click Here</a>
         </div>
       </div>
 
-      <div class="card text-dark col-md-3 ms-3" style="width: 18rem; height :24rem;" id="rcorners"><br>
-        <img class="card-img-top" src="/images/medicalprescription.jpg" alt="Card image cap" style="height: 200px;">
+      <div class="card text-dark text-center" style="width: 18rem; height :24rem;" id="rcorners"><br>
+        <img class="card-img-top" src="/images/prescription.jpg" alt="Card image cap" style="height: 200px;">
         <div class="card-body">
-          <h5 class="card-title fw-bold">View My Prescriptions</h5>
+          <h5 class="card-title fw-bold mt-2">View Your Prescriptions</h5>
           <form action="/auth/viewPrescription" method="post">
-            <button type="hidden" class="btn btn-dark">Click Here</button>
+            <button type="hidden" class="btn btn-dark mt-2">Click Here</button>
           </form>
-          {{!-- <a href="#" class="btn btn-dark">Click Here</a> --}}
+          {{!-- <a href="#" class="btn btn-dark mt-2">Click Here</a> --}}
         </div>
       </div>
 
-      <div class="card text-dark col-md-3 ms-3" style="width: 18rem; height :24rem;" id="rcorners"><br>
+      <div class="card text-dark text-center" style="width: 18rem; height :24rem;" id="rcorners"><br>
         <img class="card-img-top" src="/images/adherence.jpg" alt="Card image cap" style="height: 200px;">
         <div class="card-body">
-          <h5 class="card-title fw-bold">Check Your Adherence Rate</h5>
+          <h5 class="card-title fw-bold mt-2">Check Your Adherence Rate</h5>
           <form action="/auth/adhereResponse" method="post">
-            <button type="hidden" class="btn btn-dark">Click Here</button>
+            <button type="hidden" class="btn btn-dark mt-2">Click Here</button>
           </form>
 
         </div>
       </div>
 
-      <div class="card text-dark col-md-3 ms-3" style="width: 18rem; height :24rem;" id="rcorners"><br>
+      <div class="card text-dark text-center" style="width: 18rem; height :24rem;" id="rcorners"><br>
         <img class="card-img-top" src="/images/appointments.jpg" alt="Card image cap" style="height: 200px;">
         <div class="card-body">
-          <h5 class="card-title fw-bold">Check your Appointments</h5>
+          <h5 class="card-title fw-bold mt-2">Check Your Appointments</h5>
 
           <form action="/auth/viewBookingsPat" method="POST">
-            <button class="link btn btn-dark">Click Here</button>
+            <button class="link btn btn-dark mt-2">Click Here</button>
           </form>
 
         </div>
