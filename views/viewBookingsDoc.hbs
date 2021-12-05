@@ -22,31 +22,38 @@
 
 <body>
     <!-- Navbar -->
-    <nav class=" navbar navbar-expand-lg navbar-light">
-        <div class="container">
-            <a class="navbar-brand" href="/">
-                <img src="/images/logo-large.png" style="height:100px; width:100px;" alt="brand-logo">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Add Prescription</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="#">See Appointments</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/">Logout</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+      <nav class=" navbar navbar-expand-lg navbar-light">
+      <div class="container">
+          <a class="navbar-brand" href="/">
+              <img src="/images/logo-large.png" style="height:100px; width:100px;" alt="brand-logo">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                  <li class="nav-item ">
+                      <a class="nav-link" href="doctorHome">Home</a>
+                  </li>
+                  <li class="nav-item">
+                        <form action="/auth/addPrescription" method="POST">
+                          <button type="submit" style="border: none; background:none;" class="nav-link">Add Prescription</button>
+                        </form>
+                  </li>
+                  <li class="nav-item">
+                      <form action="/auth/viewBookingsDoc" method="POST">
+                        <button type="submit" style="border: none; background:none;" class="nav-link active">View Appointments</button>
+                      </form>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" aria-current="page" href="/">Logout</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
 
     <!-- Page Title -->
     <header class="container mx-auto mt-3 mb-3 text-center">
@@ -75,7 +82,7 @@ patDet.forEach((e) => {
   const card = document.createElement("div");
   card.setAttribute("class", "container d-flex p-2 mb-3 text-dark");
   if(e.appointment_type == "Ambulatory" || e.appointment_type == "Urgentcare"){
-      card.setAttribute("style", "justify-content:space-evenly; align-items:center;background-color:#FF9500; flex-wrap:wrap; text-transform: capitalize;");
+      card.setAttribute("style", "justify-content:space-evenly; align-items:center;background-color:coral; flex-wrap:wrap; text-transform: capitalize;");
   }
   else{
       card.setAttribute("style", "justify-content:space-evenly; align-items:center;background-color:#ffdb58; flex-wrap:wrap; text-transform: capitalize;");
