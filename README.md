@@ -5,8 +5,11 @@
 1. A complete interaction system b/w doctor and patients.
 2. Schedule a desired appointment with your doctor.
 3. Get real time notifications/reminders to take your medicines.
-4. Online Prescription View Facility by doctor.
-5. Check your Adherence Rates with the help of Machine Learning Model.
+4. Get notified and refill your prescription in one-click!
+5. View all your prescriptions and medical reports.
+6. Check your Adherence Rates with the help of Machine Learning Model.
+7. Register clinics, hospitals and doctors
+8. Doctors can write digital prescriptions.
 
 
 ## Tech Stack 💻
