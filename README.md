@@ -26,6 +26,7 @@
 3. Import sys_adhere.sql to your localhost/phpmyadmin.
 4. Make sure Apache and MySQL servers on XAMPP have been started up. 
 5. Run the following commands. (Make sure you are in the same directory as package.json)
+6. Thanks
 
 ```
 npm install
